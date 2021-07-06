@@ -17,11 +17,10 @@ public class ConfigureTwitter {
         twitter = tf.getInstance();
     }
 
-    //getir --> [getir, Getir, #getir]
     public boolean searchTrend(String trendName, int WOEID) throws TwitterException {
         String[] trendNameS = new String[3];
-        trendNameS[0] = trendName.substring(0,1).toLowerCase() + trendName.substring(1,-1);
-        trendNameS[1] = trendName.substring(0,1).toUpperCase() + trendName.substring(1,-1);
+        trendNameS[0] = trendName.substring(0,1).toLowerCase() + trendName.substring(1,trendName.length());
+        trendNameS[1] = trendName.substring(0,1).toUpperCase() + trendName.substring(1,trendName.length());
         trendNameS[2] = "#"+trendName;
 
         Trends trends = twitter.getPlaceTrends(WOEID);
