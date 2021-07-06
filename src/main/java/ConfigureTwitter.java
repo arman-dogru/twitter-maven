@@ -6,7 +6,7 @@ public class ConfigureTwitter {
     Twitter twitter;
     TwitterFactory tf;
 
-    public void config(String ConsumerKey, String AccessToken){
+    public ConfigureTwitter(String ConsumerKey, String AccessToken){
         cb = new ConfigurationBuilder();
         cb.setDebugEnabled(true);
                 cb.setOAuthConsumerKey(ConsumerKey);
