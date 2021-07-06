@@ -25,9 +25,10 @@ public class ConfigureTwitter {
 
         Trends trends = twitter.getPlaceTrends(WOEID);
         Trend[] trendArray = trends.getTrends();
+
         for (Trend trend : trendArray) {
             for (String trendAlt : trendNames) {
-                if (trend.toString() == trendAlt) {
+                if (trend.getName() == trendAlt) {
                     return true;
                 }
             }
