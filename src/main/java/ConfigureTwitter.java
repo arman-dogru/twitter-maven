@@ -18,16 +18,16 @@ public class ConfigureTwitter {
     }
 
     public boolean searchTrend(String trendName, int WOEID) throws TwitterException {
-        String[] trendNameS = new String[3];
-        trendNameS[0] = trendName.substring(0,1).toLowerCase() + trendName.substring(1,trendName.length());
-        trendNameS[1] = trendName.substring(0,1).toUpperCase() + trendName.substring(1,trendName.length());
-        trendNameS[2] = "#"+trendName;
+        String[] trendNames = new String[3];
+        trendNames[0] = trendName.substring(0,1).toLowerCase() + trendName.substring(1,trendName.length());
+        trendNames[1] = trendName.substring(0,1).toUpperCase() + trendName.substring(1,trendName.length());
+        trendNames[2] = "#"+trendName;
 
         Trends trends = twitter.getPlaceTrends(WOEID);
-        Trend[] trendS = trends.getTrends();
-        for (Trend trend : trendS) {
-            for (String tName : trendNameS) {
-                if (trend.toString() == tName) {
+        Trend[] trendArray = trends.getTrends();
+        for (Trend trend : trendArray) {
+            for (String trendAlt : trendNames) {
+                if (trend.toString() == trendAlt) {
                     return true;
                 }
             }
