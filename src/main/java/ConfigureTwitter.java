@@ -6,13 +6,13 @@ public class ConfigureTwitter {
     Twitter twitter;
     TwitterFactory tf;
 
-    public ConfigureTwitter(String ConsumerKey, String AccessToken){
+    public ConfigureTwitter(String ConsumerKey, String ConsumerSecret,String TokenSecret, String AccessToken){
         cb = new ConfigurationBuilder();
         cb.setDebugEnabled(true);
                 cb.setOAuthConsumerKey(ConsumerKey);
-                //.setOAuthConsumerSecret("******************************************");
+                cb.setOAuthConsumerSecret(ConsumerSecret);
                 cb.setOAuthAccessToken(AccessToken);
-                //.setOAuthAccessTokenSecret("******************************************");
+                cb.setOAuthAccessTokenSecret(TokenSecret);
         tf = new TwitterFactory(cb.build());
         twitter = tf.getInstance();
     }
