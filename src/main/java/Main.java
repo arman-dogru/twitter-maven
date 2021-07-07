@@ -12,9 +12,11 @@ public class Main {
         String TokenSecret = ""; //Secret Access Token
 
         ConfigureTwitter twitter = new ConfigureTwitter(ConsumerKey, ConsumerSecret, AccessToken, TokenSecret);
-        if (twitter.searchTrend(topicName,WOEID)){
-            System.out.println("The subject you are searching for is not on Trending Topics on your area");
-        }
-        System.out.println("The subject you are searching for is on Trending Topics on your area");
+        TrendData trendData = twitter.searchTrend(topicName,WOEID);
+
+        System.out.println("Topic searched: "+trendData.trendName);
+        System.out.println("Currently trending: "+trendData.trending);
+        if (trendData.trending)
+            System.out.println("Tweet volume of the Trend: "+trendData.tweetVolume);
     }
 }
