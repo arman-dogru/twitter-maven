@@ -6,13 +6,13 @@ public class TrendEngine {
     Twitter twitter;
     TwitterFactory tf;
 
-    public TrendEngine(String ConsumerKey, String ConsumerSecret,String TokenSecret, String AccessToken){
+    public TrendEngine(String consumerKey, String consumerSecret,String tokenSecret, String accessToken){
         cb = new ConfigurationBuilder();
         cb.setDebugEnabled(true);
-                cb.setOAuthConsumerKey(ConsumerKey);
-                cb.setOAuthConsumerSecret(ConsumerSecret);
-                cb.setOAuthAccessToken(AccessToken);
-                cb.setOAuthAccessTokenSecret(TokenSecret);
+                cb.setOAuthConsumerKey(consumerKey);
+                cb.setOAuthConsumerSecret(consumerSecret);
+                cb.setOAuthAccessToken(accessToken);
+                cb.setOAuthAccessTokenSecret(tokenSecret);
         tf = new TwitterFactory(cb.build());
         twitter = tf.getInstance();
     }
