@@ -11,7 +11,7 @@ public class Main {
         String AccessToken = ""; //AccessToken goes here
         String TokenSecret = ""; //Secret Access Token
 
-        ConfigureTwitter twitter = new ConfigureTwitter(ConsumerKey, ConsumerSecret, AccessToken, TokenSecret);
+        TrendEngine twitter = new TrendEngine(ConsumerKey, ConsumerSecret, AccessToken, TokenSecret);
         TrendData trendData = twitter.searchTrend(topicName,WOEID);
 
         System.out.println("Topic searched: "+trendData.trendName);

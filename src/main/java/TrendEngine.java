@@ -1,12 +1,12 @@
 import twitter4j.*;
 import twitter4j.conf.ConfigurationBuilder;
 
-public class ConfigureTwitter {
+public class TrendEngine {
     ConfigurationBuilder cb;
     Twitter twitter;
     TwitterFactory tf;
 
-    public ConfigureTwitter(String ConsumerKey, String ConsumerSecret,String TokenSecret, String AccessToken){
+    public TrendEngine(String ConsumerKey, String ConsumerSecret,String TokenSecret, String AccessToken){
         cb = new ConfigurationBuilder();
         cb.setDebugEnabled(true);
                 cb.setOAuthConsumerKey(ConsumerKey);
