@@ -1,7 +1,5 @@
 import twitter4j.TwitterException;
 
-import javax.crypto.SecretKey;
-
 public class Main {
     public static void main(String[] args) throws TwitterException {
         int WOEID = 23424969; //Where on Earth ID of the designated location
