@@ -1,3 +1,5 @@
+package TrendPackage;
+
 import twitter4j.Trend;
 
 public class TrendData {
