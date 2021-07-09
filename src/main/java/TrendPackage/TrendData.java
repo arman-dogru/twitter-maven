@@ -1,11 +1,11 @@
 package TrendPackage;
 
-//import lombok.Getter;
-//import lombok.Setter;
+import lombok.Getter;
+import lombok.Setter;
 import twitter4j.Trend;
 
-//@Getter
-//@Setter
+@Getter
+@Setter
 public class TrendData {
     public int tweetVolume;
     public String trendName;
