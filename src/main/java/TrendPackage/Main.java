@@ -3,7 +3,7 @@ package TrendPackage;
 import twitter4j.TwitterException;
 
 public class Main {
-    public static void main(String[] args) throws TwitterException {
+    public static void main(String[] args) throws TwitterException, IllegalArgumentException {
         int WOEID = 23424969; //Where on Earth ID of the designated location
         String topicName = ""; //The name of the trending topic
         String consumerKey = ""; //Consumer Key goes here

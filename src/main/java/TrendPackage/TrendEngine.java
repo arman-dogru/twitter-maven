@@ -19,7 +19,10 @@ public class TrendEngine {
         twitter = tf.getInstance();
     }
 
-    public TrendData searchTrend(String trendName, int WOEID) throws TwitterException {
+    public TrendData searchTrend(String trendName, int WOEID) throws TwitterException, IllegalArgumentException {
+        if(trendName.equals(""))
+            throw new IllegalArgumentException("Please enter an argument to search in Top Trendings");
+
         Trends trends = twitter.getPlaceTrends(WOEID);
         Trend[] trendArray = trends.getTrends();
 
