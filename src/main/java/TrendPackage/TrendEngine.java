@@ -27,7 +27,7 @@ public class TrendEngine {
         Trend[] trendArray = trends.getTrends();
 
         for (Trend trend : trendArray) {
-            if (trend.getName().equals(trendName)) {
+            if (trend.getName().equalsIgnoreCase(trendName)) {
                 TrendData trendData = new TrendData(trend);
                 return trendData;
             }
