@@ -6,7 +6,7 @@ public class TrendEngine {
     Twitter twitter;
     TwitterFactory tf;
 
-    public TrendEngine(String consumerKey, String consumerSecret,String tokenSecret, String accessToken){
+    public TrendEngine(String consumerKey, String consumerSecret,String accessToken, String tokenSecret){
         cb = new ConfigurationBuilder();
         cb.setDebugEnabled(true);
                 cb.setOAuthConsumerKey(consumerKey);
