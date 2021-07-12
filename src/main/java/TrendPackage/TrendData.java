@@ -1,11 +1,14 @@
 package TrendPackage;
 
+import lombok.Data;
+import lombok.Getter;
 import twitter4j.Trend;
 
+@Data
 public class TrendData {
-    public int tweetVolume;
-    public String trendName;
-    public boolean trending;
+    private int tweetVolume;
+    private String trendName;
+    private boolean trending;
 
     public TrendData(String trendName){
         this.trendName = trendName;
@@ -18,5 +21,4 @@ public class TrendData {
         trendName = trend.getName();
         this.trending = true;
     }
-
 }

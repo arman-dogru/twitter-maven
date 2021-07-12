@@ -14,9 +14,9 @@ public class Main {
         TrendEngine twitter = new TrendEngine(consumerKey, consumerSecret, accessToken,tokenSecret);
         TrendData trendData = twitter.searchTrend(topicName,WOEID);
 
-        System.out.println("Topic searched: "+trendData.trendName);
-        System.out.println("Currently trending: "+trendData.trending);
-        if (trendData.trending)
-            System.out.println("Tweet volume of the Trend: "+trendData.tweetVolume);
+        System.out.println("Topic searched: "+trendData.getTrendName());
+        System.out.println("Currently trending: "+trendData.isTrending());
+        if (trendData.isTrending())
+            System.out.println("Tweet volume of the Trend: "+trendData.getTweetVolume());
     }
 }
