@@ -3,6 +3,9 @@ package TrendPackage;
 import twitter4j.*;
 import twitter4j.conf.ConfigurationBuilder;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class TrendEngine {
     ConfigurationBuilder cb;
     Twitter twitter;
@@ -24,14 +27,14 @@ public class TrendEngine {
             throw new IllegalArgumentException("Please enter an argument to search in Top Trendings");
 
         Trends trends = twitter.getPlaceTrends(WOEID);
-        Trend[] trendArray = trends.getTrends();
+        List<Trend> trendList = Arrays.stream(trends.getTrends()).toList();
 
-        for (Trend trend : trendArray) {
-            if (trend.getName().equalsIgnoreCase(trendName)) {
-                TrendData trendData = new TrendData(trend);
+        Trend temp = trendList.stream().filter(trend -> trendName.equalsIgnoreCase(trend.getName())).findFirst().orElse(null);
+            if (temp != null){
+                TrendData trendData = new TrendData(temp);
                 return trendData;
             }
-        }
+
         TrendData trendData = new TrendData(trendName);
         return trendData;
     }
