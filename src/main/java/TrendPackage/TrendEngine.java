@@ -31,7 +31,6 @@ public class TrendEngine {
                 TrendData trendData = new TrendData(trend);
                 return trendData;
             }
-
         }
         TrendData trendData = new TrendData(trendName);
         return trendData;
